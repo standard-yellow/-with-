@@ -1,0 +1,25 @@
+s = input()
+#카운트를 할 때는 변수를 하나 생성해 1씩 더하며 카운트 해주자.
+group0 = 0
+group1 = 0
+
+if int(s[0]) == 0:
+  group0 = 1
+
+else:
+  group1 = 1
+
+for i in range(1, len(s)):
+  if int(s[i]) == int(s[i - 1]):
+    continue
+  elif int(s[i]) == 0:
+    group0 += 1
+
+  elif int(s[i]) == 1:
+    group1 += 1
+
+if group0 <= group1:
+  print(group0)
+
+else:
+  print(group1)
