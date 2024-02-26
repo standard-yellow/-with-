@@ -1,0 +1,19 @@
+from collections import deque
+
+n = int(input())
+x = list(map(int, input().split()))
+
+if len(x) != n:
+  print("모험가의 수와 공포도의 개수가 일치하지 않습니다.")
+  exit()
+x.sort(reverse=True)
+queue_x = deque(x)
+party = 0
+
+while x:
+  for _ in range(x[0]):
+    queue_x.popleft()
+  x = list(queue_x)
+  party += 1
+
+print(party)
