@@ -1,0 +1,14 @@
+s = input()
+#무언가를 연속적으로 더할 때는 변수를 하나 생성해 그곳에 더해주자.
+ans = int(s[0])
+
+for i in range(1, len(s)):
+  if ans == 0:
+    ans += int(s[i])
+
+  elif int(s[i]) == 0 or int(s[i]) == 1:
+    ans += int(s[i])
+
+  else:
+    ans *= int(s[i])
+print(ans)
